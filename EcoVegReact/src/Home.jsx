@@ -2,12 +2,13 @@ import React from 'react'
 import './Home.css'
 export const Home = () => {
     return (
+
         <header class="hero-section">
             <div class="hero-content">
                 <h2>
                     <span className='first-h2'>Organic</span>
                     <span className='second-h2'> Foods at your</span>
-                    <h2>Doorsteps</h2>
+                    <h2 className='third-h2'>Doorsteps</h2>
                 </h2>
                 <p className='wrapper-p'>Dignissim massa diam elementum.</p>
                 <div class="cta-buttons">
@@ -34,5 +35,6 @@ export const Home = () => {
                 <img src="Images/bg.png" alt="Organic Foods" />
             </div>
         </header>
+
     )
 }
