@@ -33,8 +33,13 @@ function Nav() {
           <Link>Home</Link>
           <Link>About</Link>
           <Link>Services</Link>
-
         </ul>
+      </div>
+      <div className="Login">
+        <Link><span><i class="fa-solid fa-user"></i></span>Login</Link>
+      </div>
+      <div className="cart">
+        <Link><i class="fa-solid fa-cart-shopping"></i>Cart</Link>
       </div>
     </div>
     </>
