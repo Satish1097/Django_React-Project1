@@ -11,8 +11,8 @@ export const Home = () => {
                 </h2>
                 <p className='wrapper-p'>Dignissim massa diam elementum.</p>
                 <div class="cta-buttons">
-                    <button class="start-shopping">START SHOPPING</button>
-                    <button class="join-now">JOIN NOW</button>
+                    <a href='' className="start-shopping">START SHOPPING</a>
+                    <a href='' className="join-now">JOIN NOW</a>
                 </div>
                 <div class="stats">
                     <div>
@@ -31,7 +31,7 @@ export const Home = () => {
                 </div>
             </div>
             <div class="hero-image">
-                <img src="path/to/your/image.png" alt="Organic Foods" />
+                <img src="Images/bg.png" alt="Organic Foods" />
             </div>
         </header>
     )
