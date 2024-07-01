@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Nav.css'
 
 function Nav() {
@@ -26,7 +27,14 @@ function Nav() {
         <div className="sicon">
         <i class="fa-solid fa-magnifying-glass"></i>
         </div>
+      </div>
+      <div className="menu">
+        <ul>
+          <Link>Home</Link>
+          <Link>About</Link>
+          <Link>Services</Link>
 
+        </ul>
       </div>
     </div>
     </>
