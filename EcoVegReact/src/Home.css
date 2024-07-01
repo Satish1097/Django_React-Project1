@@ -21,7 +21,8 @@
     font-size: 60px;
 }
 
-.second-h2 {
+.second-h2,
+.third-h2 {
     font-size: 60px;
     font-weight: normal;
 }
