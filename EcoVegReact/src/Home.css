@@ -14,9 +14,6 @@
     color: #fff;
 }
 
-h2 {
-    font-size: 60px;
-}
 
 .first-h2 {
     color: rgb(108 179 83);
@@ -31,6 +28,8 @@ h2 {
 
 .wrapper-p {
     margin-top: 20px;
+    font-size: 2rem;
+    color: #dcd1d1;
 }
 
 .hero-content {
@@ -47,31 +46,30 @@ h2 {
     font-weight: bold;
 }
 
-.hero-content p {
-    font-size: 1.2em;
-    color: #666;
-}
 
 .cta-buttons {
-    margin: 20px 0;
+    margin: 40px 0;
+    gap: 20px;
 }
 
-.cta-buttons button {
-    padding: 10px 20px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 .start-shopping {
     background-color: #28a745;
     color: #fff;
+    padding: 20px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
 .join-now {
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    color: black;
+    margin-left: 30px;
+    padding: 20px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    cursor: pointer;
 }
 
 .stats {
@@ -79,17 +77,21 @@ h2 {
     gap: 20px;
     margin-top: 80px;
 }
-.stats .stats-span{
+
+.stats .stats-span {
     font-weight: bold;
     font-size: 40px;
 }
-.stats-outer{
+
+.stats-outer {
     display: flex;
 }
-.stats .stats-item{
+
+.stats .stats-item {
     font-weight: normal;
     font-size: 25px;
 }
+
 .stats div {
     text-align: center;
 }
