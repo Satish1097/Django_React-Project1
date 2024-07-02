@@ -10,7 +10,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Nav />}></Route>
           <Route path="Home/" element={<Home />}></Route>
-
         </Routes>
       </Router>
 
