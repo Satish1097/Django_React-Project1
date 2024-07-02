@@ -1,42 +1,89 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.main {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e7e7e7;
+  width: 100%;
+
+}
+
+.main > div {
+  flex: 1;
+  margin: 0 10px;
+}
+
+h4 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.follow ul {
+  display: flex;
+  gap: 10px;
+}
+
+.follow li:hover {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.EcoVeg ul li:hover,
+.quick_Link ul li:hover,
+.customer_service ul li:hover {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.subscribe_us {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.subscribe_us h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.subscribe_us p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.subscribe_us input[type="text"] {
+  padding: 10px;
+  margin-top: 10px;
+  width: 80%;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-.card {
-  padding: 2em;
+.subscribe_us button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.read-the-docs {
-  color: #888;
+.subscribe_us button:hover {
+  background-color: #0056b3;
 }
+
