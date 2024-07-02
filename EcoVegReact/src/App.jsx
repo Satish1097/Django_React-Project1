@@ -11,7 +11,7 @@ function App() {
       <Router>
         <Nav/>
         <Routes>
-          <Route path="Home/" element={<Home />}></Route>
+          <Route path="/" element={<Home />}></Route>
           <Route path="/Test" element={<Test />}></Route>
           <Route path="/Product" element={<Product />}></Route>
 
