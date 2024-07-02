@@ -5,7 +5,6 @@
   background-color: #f8f8f8;
   border-top: 1px solid #e7e7e7;
   width: 100%;
- 
   margin: 0 auto;
   flex-wrap: wrap;
 }
@@ -36,6 +35,10 @@ li {
 .follow ul {
   display: flex;
   gap: 10px;
+}
+
+.follow li {
+  font-size: 24px; /* Increase icon size */
 }
 
 .follow li:hover {
@@ -90,3 +93,46 @@ li {
   background-color: #0056b3;
 }
 
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .main > div {
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .subscribe_us input[type="text"] {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  h4 {
+    font-size: 16px;
+  }
+
+  li {
+    font-size: 14px;
+  }
+
+  .follow li {
+    font-size: 20px; /* Adjust icon size for small screens */
+  }
+
+  .subscribe_us p {
+    font-size: 14px;
+  }
+
+  .subscribe_us input[type="text"] {
+    width: 95%;
+    font-size: 14px;
+  }
+
+  .subscribe_us button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
