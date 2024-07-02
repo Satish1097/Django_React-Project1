@@ -1,27 +1,39 @@
-.nav{
+.nav {
     height: 12vh;
     width: 100%;
     display: flex;
-    background-color: beige;
+    background-color: white;
     justify-content: space-between;
 }
-.nav .logo{
+
+.nav .logo {
     display: flex;
     width: 15%;
     text-align: center;
 }
-.nav .logo img{
+
+.nav .logo img {
     width: 60%;
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
 }
-.nav .logo h2{
+
+.nav .logo h2 {
     text-align: center;
     transform: translateY(30%);
     font-size: 30px;
 }
 
-.nav .search{
+.bar {
+    display: none;
+    font-size: 22px;
+    color: green;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+}
+
+.nav .search {
     height: 45px;
     width: 30%;
     display: flex;
@@ -31,75 +43,157 @@
     border-radius: 10px;
 }
 
-.nav .search .category{
+.nav .search .category {
     width: auto;
     height: 100%;
     border-radius: 10px;
 }
-.nav .search .category select{
+
+.nav .search .category select {
     width: 100%;
     height: 100%;
     border: 0;
     outline: 0;
     border-radius: 10px;
 }
-.nav .search .input{
+
+.nav .search .input {
     width: 70%;
     height: 100%;
 }
-.nav .search .input form{
+
+.nav .search .input form {
     width: 100%;
     height: 100%;
 }
-.nav .search .input form input{
+
+.nav .search .input form input {
     width: 100%;
     height: 90%;
     border: 0;
     outline: 0;
 }
-.nav .search .input form input:focus{
+
+.nav .search .input form input:focus {
     outline: none;
 }
 
-.nav .search .sicon{
+.nav .search .sicon {
     width: 10%;
     height: 100%;
     text-align: center;
 }
-.nav .search .sicon i{
+
+.nav .search .sicon i {
     font-size: 20px;
     transform: translateY(50%);
 }
 
-.nav .menu{
+.nav .menu {
     width: 25%;
     height: 100%;
     display: flex;
 }
-.nav .menu ul{
+
+.nav .menu ul {
     width: 100%;
     display: flex;
     justify-content: space-around;
 }
-.nav .menu ul a{
+
+.nav .menu ul a {
     position: relative;
     text-decoration: none;
     font-size: 20px;
-    color: black;
+    color: green;
     top: 32%;
 }
- .Login a{
+
+.Login a {
     position: relative;
     text-decoration: none;
     font-size: 20px;
     top: 32%;
-    color: black;
- }
- .cart a{
+    color: green;
+}
+
+.cart a {
     position: relative;
     text-decoration: none;
     font-size: 20px;
     top: 32%;
     margin-right: 50px;
-    color: black;
- }
+    color: green;
+}
+
+@media screen and (max-device-width: 1100px) {
+    .nav .logo {
+        width: 20%;
+    }
+
+    .nav .logo img {
+        width: 40%;
+    }
+
+    .nav .search {
+        width: 35%;
+    }
+
+    .cart a {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-device-width: 768px) {
+    .nav .logo {
+        width: 25%;
+    }
+
+    .nav .logo img {
+        width: 60%;
+    }
+
+    .nav .logo h2 {
+        font-size: 25px;
+        transform: translateY(35%);
+    }
+
+    .nav .menu {
+        height: 30%;
+        width: 50%;
+        background-color:white;
+        position: absolute;
+        top: 12.5vh;
+        left: -100%;
+        display: block;
+    }
+
+    .nav .menu ul {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-around;
+    }
+    .nav .menu ul a{
+        margin-top: 20px;
+    }
+
+    .nav .bar {
+        display: block;
+    }
+
+    .nav .search {
+        width: 40%;
+    }
+
+    .Login a {
+        top: 33%;
+    }
+
+    .cart a {
+        top: 33%;
+    }
+
+
+}
