@@ -32,7 +32,7 @@ export const Home = () => {
                 </div>
             </div>
             <div class="hero-image">
-                <img src="Images/bg.png" alt="Organic Foods" />
+                <img src="Images/bg.png" alt="Organic Foods" className='home-image' />
             </div>
         </header>
 

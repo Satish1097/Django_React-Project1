@@ -143,7 +143,8 @@
         justify-content: center;
         gap: 30px;
     }
-    .stats .stats-item{
+
+    .stats .stats-item {
         font-size: 35px;
     }
 }
@@ -215,8 +216,9 @@
     .cta-buttons {
         display: flex;
         flex-direction: column;
-        
+
     }
+
     .join-now {
         margin-left: 3px;
     }
