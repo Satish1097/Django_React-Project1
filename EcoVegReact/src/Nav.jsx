@@ -42,9 +42,9 @@ function Nav() {
         </div>
         <div className="menu" id='menu'>
           <ul>
-            <Link>Home</Link>
-            <Link>About</Link>
-            <Link>Services</Link>
+            <Link to="/">Home</Link>
+            <Link to="/Test">About</Link>
+            <Link to="/Product">Services</Link>
           </ul>
         </div>
         <div className="Login">
