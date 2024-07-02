@@ -106,3 +106,118 @@
     max-width: 100%;
     height: auto;
 }
+
+@media (max-width: 1200px) {
+    .hero-section {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .hero-image {
+        margin-top: 20px;
+    }
+
+    .cta-buttons {
+        justify-content: space-around;
+        padding: 30px;
+    }
+
+    .join-now {
+        margin-left: 40px;
+    }
+
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats-outer {
+        justify-content: center;
+        gap: 30px;
+    }
+    .stats .stats-item{
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .first-h2,
+    .second-h2,
+    .third-h2 {
+        font-size: 40px;
+    }
+
+    .wrapper-p {
+        font-size: 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .stats .stats-span {
+        font-size: 30px;
+    }
+
+    .stats .stats-item {
+        font-size: 20px;
+    }
+
+    .stats strong {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .first-h2,
+    .second-h2,
+    .third-h2 {
+        font-size: 30px;
+    }
+
+    .wrapper-p {
+        font-size: 1.2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5em;
+    }
+
+    .start-shopping,
+    .join-now {
+        padding: 15px 20px;
+    }
+
+    .stats .stats-span {
+        font-size: 25px;
+    }
+
+    .stats .stats-item {
+        font-size: 18px;
+    }
+
+    .stats strong {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 530px) {
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .join-now {
+        margin-left: 3px;
+    }
+}
