@@ -22,7 +22,6 @@ function Nav() {
           <img src="Images/Ecologo.png" alt="img" />
           <h2>EcoVeg</h2>
         </div>
-        <button className='bar' onClick={OpenMenu}><i className="fa-solid fa-bars-staggered" id='icon'></i></button>
         <div className="search">
           <div className="category">
             <select name="" id="">
@@ -54,6 +53,7 @@ function Nav() {
         <div className="cart">
           <Link><i class="fa-solid fa-cart-shopping"></i></Link>
         </div>
+        <button className='bar' onClick={OpenMenu}><i className="fa-solid fa-bars-staggered" id='icon'></i></button>
       </div>
     </>
   )

@@ -31,6 +31,7 @@
     border: 0;
     outline: 0;
     background-color: transparent;
+    margin-right: 30px;
 }
 
 .nav .search {
@@ -122,7 +123,6 @@
     text-decoration: none;
     font-size: 20px;
     top: 32%;
-    margin-right: 50px;
     color: green;
 }
 
@@ -137,10 +137,6 @@
 
     .nav .search {
         width: 35%;
-    }
-
-    .cart a {
-        margin-right: 20px;
     }
 }
 
