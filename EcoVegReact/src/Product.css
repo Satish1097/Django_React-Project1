@@ -1,0 +1,99 @@
+.wrapper-product {
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: whitesmoke;
+    flex-wrap: wrap;
+}
+
+.wrapper-product .product {
+    width: 300px;
+    height: 350px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+.wrapper-product .product:hover {
+    transform: translateY(-5px);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border: 1px solid #0000007a;
+}
+
+.wrapper-product .product .product-img {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-product .product .product-name p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.wrapper-product .product .product-price {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.actual-price {
+    font-size: 20px;
+    color: rgb(159, 150, 136);
+}
+
+.discount-price {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+.wrapper-product .product-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    gap: 15px;
+}
+
+.wrapper-product .product-btn .product-add-btn {
+    padding: 8px 15px;
+    background: green;
+    border: none;
+    outline: none;
+    color: azure;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.wrapper-product .product-btn .product-add-btn:hover {
+    background: rgb(8, 158, 8);
+
+}
+
+.wrapper-product .product-btn .product-like-btn {
+    padding: 8px 15px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    background: rgba(255, 0, 0, 0.701);
+    color: azure;
+    border-radius: 5px;
+    transition: all 0.5 ease;
+}
+
+.wrapper-product .product-btn .product-like-btn:hover {
+    background: #fff;
+    color: red;
+    border: 1px solid #000;
+    background: #cbb4b485;
+}
