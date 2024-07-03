@@ -1,0 +1,73 @@
+.offer-section {
+    width: 100%;
+    height: 600px;
+    background-color: whitesmoke;
+}
+
+.offer-section .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+}
+
+.inner-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.row-left {
+    width: 55%;
+    height: 90%;
+    background-color: #000;
+}
+
+.row-left-inner {
+    height: 100%;
+    width: 100%;
+    background-image: url('Images/vegetables.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.row-right {
+    width: 45%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.row-right-top {
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(90deg, rgba(0, 238, 255, 0.466), #000000bf);
+}
+
+.row-right-top .inner {
+    width: 100%;
+    height: 100%;
+    background-image: url('Images/vegtables-right-top.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.row-right-below {
+    width: 100%;
+    height: 50%;
+    background-color: rgb(128, 128, 128);
+}
+
+.row-right-below .inner {
+    width: 100%;
+    height: 100%;
+    background-image: url('Images/vegetables-right-below.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

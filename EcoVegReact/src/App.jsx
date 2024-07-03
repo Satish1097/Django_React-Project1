@@ -9,6 +9,7 @@ import './App.css'
 import Footer from './Footer'
 import Login from './Login'
 import Signup from './Signup'
+import Offer from './Offer'
 function App() {
 
   return (
@@ -24,6 +25,7 @@ function App() {
       </Router>
       <Category />
       <Product/>
+      <Offer />
       <Footer />
     </>
   )
