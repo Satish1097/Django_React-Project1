@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Nav from './Nav'
 import { Home } from './Home'
 import Product from './Product'
+import Category from './Category'
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
         </Routes>
       </Router>
       <Home />
-      <Product />
+      <Category />
     </>
   )
 }
