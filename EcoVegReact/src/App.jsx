@@ -3,14 +3,17 @@ import './App.css'
 import Footer from './Footer'
 import Sell_product from './Sell_product'
 import Login from './Login'
+import Signup from './Signup'
 function App() {
 
   return (
     <>
      
         <Footer/>
-        <Login/>
+       <Login/>
        <Sell_product/>
+       <Signup/>
+
         
         
         
@@ -20,4 +23,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
