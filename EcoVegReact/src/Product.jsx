@@ -1,26 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { FaHeart } from "react-icons/fa";
-import './Product.css'
-const Product = () => {
-    return (
-        <div className="wrapper-product">
-            <div className="product">
-                <div className="product-img">
-                    <img src="https://demo.templatesjungle.com/organic/images/product-thumb-5.png" alt="" />
-                </div>
-                <div className="product-name">
-                    <p>Organic Spinach Leaves (Fresh Produce)</p>
-                </div>
-                <div className="product-price">
-                    <del className="actual-price"><p>$ 24.00</p></del>
-                    <p className="discount-price">$ 18.00</p>
-                </div>
-                <div className="product-btn">
-                    <button className="product-add-btn">Add to Cart</button>
-                    <button className="product-like-btn"><FaHeart /></button>
-                </div>
-            </div>
+import './Product.css';
+
+
+
+function Product() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/api/Product/')
+      .then(response => {
+        setItems(response.data);
+      })
+      .catch(error => {
+        console.error('There was an error fetching the data!', error);
+      });
+  }, []);
+
+  return (
+    <>
+    <div className="wrapper-product">
+    {items.map(i=>(
+    <div className="product">
+        <div className="product-img">
+            <img src={i.P_Image} alt="" />
         </div>
-    )
+        <div className="product-name">
+            <p>{i.P_Name}</p>
+        </div>
+        <div className="product-price">
+            <del className="actual-price"><p>{i.P_Price}</p></del>
+            <p className="discount-price">{i.Discounted_Price}</p>
+        </div>
+        <div className="product-btn">
+            <button className="product-add-btn">Add to Cart</button>
+            <button className="product-like-btn"><FaHeart /></button>
+        </div>
+    </div>
+    ))}
+</div>
+</>
+);
 }
-export default Product
+
+export default Product;
+

@@ -31,6 +31,13 @@
     justify-content: center;
     align-items: center;
 }
+.wrapper-product .product .product-img img{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
 
 .wrapper-product .product .product-name p {
     text-align: center;

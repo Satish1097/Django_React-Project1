@@ -1,8 +1,20 @@
 import React from 'react'
+import { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import './Nav.css'
 
 function Nav() {
+  const[Category,SetCategory]=useState([]);
+  useEffect(()=>{
+    axios.get('http://127.0.0.1:8000/api/ProductCategory/')
+    .then(response => {
+      SetCategory(response.data);
+    })
+    .catch(error => {
+      console.error('There was an error fetching the data!', error);
+    });
+  },[])
 
   const OpenMenu = () => {
     var x = document.getElementById('menu');
@@ -26,9 +38,9 @@ function Nav() {
           <div className="category">
             <select name="" id="">
               <option value="">All Category</option>
-              <option value="">Leaves</option>
-              <option value="">Root</option>
-              <option value="">Flowers</option>
+              {Category.map(i=>(
+                <option value="">{i.Category}</option>
+              ))}
             </select>
           </div>
           <div className="input">
@@ -42,13 +54,13 @@ function Nav() {
         </div>
         <div className="menu" id='menu'>
           <ul>
-            <Link>Home</Link>
-            <Link>About</Link>
-            <Link>Services</Link>
+            <Link to="/">Home</Link>
+            <Link to="/Test">About</Link>
+            <Link to="/Product">Services</Link>
           </ul>
         </div>
         <div className="Login">
-          <Link><span><i class="fa-solid fa-user"></i></span></Link>
+          <Link to='/Login'><span><i class="fa-solid fa-user"></i></span></Link>
         </div>
         <div className="cart">
           <Link><i class="fa-solid fa-cart-shopping"></i></Link>

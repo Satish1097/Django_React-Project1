@@ -175,7 +175,6 @@
     .nav .menu ul a{
         margin-top: 20px;
     }
-
     .nav .bar {
         display: block;
     }
@@ -190,6 +189,7 @@
 
     .cart a {
         top: 33%;
+        margin-right: 0px;
     }
 
 
