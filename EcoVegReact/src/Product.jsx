@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { FaHeart } from "react-icons/fa";
+import './Product.css';
+
+
 
 function Product() {
   const [items, setItems] = useState([]);
@@ -15,18 +19,30 @@ function Product() {
   }, []);
 
   return (
-    <div className="App">
-      <h1>Product</h1>
-      <ul>
-        {items.map(item => (
-          <li key={item.id}>
-            {item.P_Name}: {item.P_Desc}
-            <img src={item.P_Image} alt={item.P_Name} />
-          </li>
-        ))}
-      </ul>
+    <>
+    <div className="wrapper-product">
+    {items.map(i=>(
+    <div className="product">
+        <div className="product-img">
+            <img src={i.P_Image} alt="" />
+        </div>
+        <div className="product-name">
+            <p>{i.P_Name}</p>
+        </div>
+        <div className="product-price">
+            <del className="actual-price"><p>{i.P_Price}</p></del>
+            <p className="discount-price">{i.Discounted_Price}</p>
+        </div>
+        <div className="product-btn">
+            <button className="product-add-btn">Add to Cart</button>
+            <button className="product-like-btn"><FaHeart /></button>
+        </div>
     </div>
-  );
+    ))}
+</div>
+</>
+);
 }
 
 export default Product;
+
