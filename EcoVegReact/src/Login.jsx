@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaUserAlt, FaLock,FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -39,7 +40,7 @@ function Login() {
                     </div>
                     <button type='submit' className='login-btn'>Login</button>
                     <div className='signup-link'>
-                        <p>Don't have an account? <a href="">Signup</a> </p>
+                        <p>Don't have an account? <Link to="/Signup">Signup</Link> </p>
                     </div>
                     <div className='login-with'>
                         <p>Or Login with</p>

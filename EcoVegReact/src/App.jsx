@@ -7,6 +7,7 @@ import Product from './Product'
 import './App.css'
 import Footer from './Footer'
 import Login from './Login'
+import Signup from './Signup'
 function App() {
 
   return (
@@ -17,17 +18,13 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/Test" element={<Test />}></Route>
           <Route path="/Login" element={<Login />}></Route>
+          <Route path="/Signup" element={<Signup />}></Route>
         </Routes>
       </Router>
       <Product/>
       <Footer />
-
-
-
-
-
     </>
   )
 }
 
-export default App
+export default App;
