@@ -3,6 +3,7 @@ import Nav from './Nav'
 import { Home } from './Home'
 import Test from './Test'
 import Product from './Product'
+import Category from './Category'
 
 import './App.css'
 import Footer from './Footer'
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Signup" element={<Signup />}></Route>
         </Routes>
       </Router>
+      <Category />
       <Product/>
       <Footer />
     </>
