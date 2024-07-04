@@ -19,7 +19,7 @@ const Quicks = [
   { lists: "Discount Coupons" },
   { lists: "Stores" },
   { lists: "Track Order" },
-  { lists: "Shop" },
+  { lists: "Shops" },
   { lists: "Info" }
 ];
 
