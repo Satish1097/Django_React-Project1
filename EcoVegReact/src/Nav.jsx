@@ -2,12 +2,15 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import { PiUserSwitchLight } from "react-icons/pi";
+import { BsCart4 } from "react-icons/bs";
+
 import './Nav.css'
 
 function Nav() {
   const[Category,SetCategory]=useState([]);
   useEffect(()=>{
-    axios.get('http://127.0.0.1:8000/api/ProductCategory/')
+    axios.get('http://127.0.0.1:8000/categories/')
     .then(response => {
       SetCategory(response.data);
     })
@@ -55,15 +58,15 @@ function Nav() {
         <div className="menu" id='menu'>
           <ul>
             <Link to="/">Home</Link>
-            <Link to="/Test">About</Link>
-            <Link to="/Product">Services</Link>
+            <Link to="">About</Link>
+            <Link to="">Services</Link>
           </ul>
         </div>
         <div className="Login">
-          <Link to='/Login'><span><i class="fa-solid fa-user"></i></span></Link>
+          <Link to='/Login'><span><PiUserSwitchLight /></span></Link>
         </div>
         <div className="cart">
-          <Link><i class="fa-solid fa-cart-shopping"></i></Link>
+          <Link><BsCart4/></Link>
         </div>
         <button className='bar' onClick={OpenMenu}><i className="fa-solid fa-bars-staggered" id='icon'></i></button>
       </div>

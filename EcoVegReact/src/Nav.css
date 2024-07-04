@@ -113,7 +113,7 @@
 .Login a {
     position: relative;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 30px;
     top: 32%;
     color: green;
 }
@@ -121,7 +121,7 @@
 .cart a {
     position: relative;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 30px;
     top: 32%;
     margin-right: 50px;
     color: green;

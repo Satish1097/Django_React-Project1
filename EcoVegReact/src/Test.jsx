@@ -2,24 +2,21 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function Test() {
-  const [items, setItems] = useState([]);
+  const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/Customer/')
-      .then(response => {
-        setItems(response.data);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the data!', error);
-      });
-  }, []);
+    // Fetch Customers
+    axios.get('http://127.0.0.1:8000/customers/')  // Update the URL if necessary
+      .then(response => setCustomers(response.data))
+      .catch(error => console.error('Error fetching customers:', error));
+  },[]);
 
   return (
     <div className="App">
-      <h1>Items</h1>
+      <h1>Customers</h1>
       <ul>
-        {Array.isArray(items) && items.map(item => (
-          <li key={item.id}>{item.Email}: {item.Contact} <img src={item.Image} alt="x" /></li>
+        {customers.map(customer => (
+          <li key={customer.id}>{customer.name}</li>
         ))}
       </ul>
     </div>

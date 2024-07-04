@@ -9,9 +9,10 @@ function Product() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios.get('http://127.0.0.1:8000/api/Product/')
+    axios.get('http://127.0.0.1:8000/products/')
       .then(response => {
         setItems(response.data);
+        console.log(items)
       })
       .catch(error => {
         console.error('There was an error fetching the data!', error);
