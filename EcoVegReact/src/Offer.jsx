@@ -12,7 +12,7 @@ const Offer = () => {
                     </div>
                     <div className="row-right">
                         <div className="row-right-top">
-                            <div className="inner">abc</div>
+                            <div className="inner">xyz</div>
                         </div>
                         <div className="row-right-below">
                             <div className="inner">abc</div>
