@@ -59,7 +59,7 @@ function Nav() {
           <ul>
             <Link to="/">Home</Link>
             <Link to="">About</Link>
-            <Link to="/Services">Services</Link>
+            <Link to="Services">Services</Link>
           </ul>
         </div>
         <div className="Login">
