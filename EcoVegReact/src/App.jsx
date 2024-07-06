@@ -4,13 +4,12 @@ import { Home } from './Home'
 import Test from './Test'
 import Product from './Product'
 import Category from './Category'
-
+import Services from './Services'
 import './App.css'
 import Footer from './Footer'
 import Login from './Login'
 import Signup from './Signup'
 import Offer from './Offer'
-import { Services } from './Services'
 function App() {
 
   return (
@@ -27,7 +26,7 @@ function App() {
         </Routes>
       </Router>
       <Category />
-      <Product/>
+      <Product />
       <Offer />
       <Footer />
     </>

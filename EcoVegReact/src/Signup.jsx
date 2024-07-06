@@ -11,7 +11,6 @@ const Signup = () => {
     const [email, setEmail] = useState("");
     const [mobile, setMobile] = useState("")
     const [password, setPassword] = useState("");
-    const [cpassword, setCpassword] = useState("");
     return (
         <div className="wrapper-login">
             <div className="outer-form-container">

@@ -1,0 +1,53 @@
+.container-fluid {
+    width: 100%;
+    height: auto;
+    background: #fff;
+    padding: 15px;
+
+}
+
+.container-fluid-row {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.container-fluid-row .item {
+    width: 275px;
+    height: 200px;
+    background-color: #ffffff13;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.598);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    display: grid;
+    place-items: center;
+    flex: 1 1 200px;
+    transition: .5s ease all;
+}
+
+.container-fluid-row .item .services-inner {
+    width: 85%;
+    height: 75%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.service-icons {
+    font-size: 40px;
+    color: #7B7B7B;
+}
+
+.service-p {
+    font-size: 16px;
+    color: #7B7B7B;
+}
+
+.container-fluid-row .item:hover {
+    transform: translateY(-5px);
+}
