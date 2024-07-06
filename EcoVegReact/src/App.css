@@ -9,7 +9,7 @@
   flex-wrap: wrap;
 }
 
-.main > div {
+.main>div {
   flex: 1;
   margin: 0 10px;
   min-width: 200px;
@@ -38,7 +38,8 @@ li {
 }
 
 .follow li {
-  font-size: 24px; /* Increase icon size */
+  font-size: 24px;
+  /* Increase icon size */
 }
 
 .follow li:hover {
@@ -100,199 +101,6 @@ li {
   box-sizing: border-box;
 }
 
-.wrapper-login {
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  background: #081b29;
-  display: grid;
-  place-items: center;
-
-}
-
-.login-box {
-  height:auto;
-  width: 400px;
-  background-color: transparent;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow:#0ef 0px 5px 15px;
-  transition: .5s;
-}
-.login-box:hover{
-  transform: translateY(-10px);
-}
-
-.input-box {
-  position: relative;
-  width: 100%;
-  height: 40px;
-  margin: 25px 0;
-}
-
-.login-box h2 {
-  color: #fff;
-  text-align: center;
-}
-
-.input-box input {
-  height: 100%;
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid #fff;
-  padding-right: 24px;
-  font-size: 16px;
-  color: #fff;
-  font-weight: 500;
-  transition: 0.5s;
-}
-
-.input-box input:focus {
-  border-bottom-color: #0ef;
-}
-
-.input-box label {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  font-size: 16px;
-  color: #fff;
-  pointer-events: none;
-  transition: 0.5s;
-}
-
-.input-box input:focus~label,
-.input-box input:valid~label {
-  top: -3px;
-  color: #0ef;
-}
-
-.input-box .icon {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  font-size: 18px;
-  color: #fff;
-  transition: 0.5s;
-}
-
-.login-btn {
-  padding: 0.5em 1.5em;
-  border: 2px solid #17C3B2;
-  position: relative;
-  overflow: hidden;
-  background-color: transparent;
-  text-align: center;
-  font-size: 20px;
-  transition: .3s;
-  z-index: 1;
-  font-family: inherit;
-  color: #17C3B2;
-  margin-top: 15px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.login-btn::before {
-  content: '';
-  width: 0;
-  height: 300%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: #17C3B2;
-  transition: .5s ease;
-  display: block;
-  z-index: -1;
-}
-
-.login-btn:hover::before {
-  width: 105%;
-}
-
-.login-btn:hover {
-  color: #111;
-}
-
-.input-box input:focus~.icon {
-  color: #0ef;
-}
-
-.forgot-link {
-  text-decoration: none;
-  color: #fff;
-  float: right;
-  transition: 0.5s;
-}
-
-.forgot-link:hover {
-  color: #17C3B2;
-  text-decoration: underline;
-}
-
-.signup-link p {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 400;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.signup-link p a {
-  color: #17C3B2;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.5s;
-}
-
-.signup-link p a:hover {
-  text-decoration: underline;
-}
-
-.login-with {
-  margin-top: 20px;
-}
-
-.login-with p {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 400;
-  text-align: center;
-}
-.social-icons{
-  margin-top: 15px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-.social-icons a {
-  color: #fff;
-  background: transparent;
-  font-size: 25px;
-  padding: 5px;
-  transition: 0.5s;
-  border-radius: 5px;
-}
-.social-icons a:hover {
-  color: #17C3B2;
-  background-color: #fff;
-}
-@media screen and (max-width:480px) {
-  .login-box {
-    width: 300px;
-  }
-}
-
-@media screen and (max-width:330px) {
-  .login-box {
-    width: 250px;
-  }
-}
 
 
 @media (max-width: 768px) {
@@ -301,7 +109,7 @@ li {
     align-items: center;
   }
 
-  .main > div {
+  .main>div {
     margin: 10px 0;
     width: 100%;
   }
@@ -321,7 +129,8 @@ li {
   }
 
   .follow li {
-    font-size: 20px; /* Adjust icon size for small screens */
+    font-size: 20px;
+    /* Adjust icon size for small screens */
   }
 
   .subscribe_us p {
@@ -337,8 +146,8 @@ li {
     padding: 8px 16px;
     font-size: 14px;
   }
+
   .login-box {
     width: 300px;
   }
 }
-

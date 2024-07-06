@@ -32,6 +32,9 @@
     background-image: url('Images/vegetables.png');
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .row-right {
@@ -70,4 +73,81 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.offer-data {
+    width: 90%;
+    height: 90%;
+    position: relative;
+}
+
+.offer-data-inner {
+    height: 50%;
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
+}
+
+.offer-section-content {
+    color: #FFFF;
+}
+
+.offer-section-content .offer-p {
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.offer-section-btn {
+    padding: 10px 20px;
+    position: relative;
+    top: 15px;
+    background-color: #fff;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: .5s ease all;
+}
+
+.offer-section-btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+@media screen and (max-width:100px) {
+    .offer-data-inner {
+        top: 30%;
+        transform: translateY(-60%);
+    }
+}
+
+@media screen and (max-width:768px) {
+    .inner-container {
+        flex-direction: column;
+    }
+
+    .row-left {
+        width: 100%;
+        height: 60%;
+    }
+
+    .offer-data-inner {
+        width: 100%;
+        height: 100%;
+    }
+
+    .row-left-inner {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+    }
+
+    .row-right {
+        width: 100%;
+        height: 100%;
+    }
+
 }
