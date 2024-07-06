@@ -10,6 +10,11 @@ function Login() {
     return (
         <div className="wrapper-login">
             <div className="outer-form-container">
+            <div className="right-form-container">
+                    <div className="right-form-container-inner">
+                        <h2>welcome</h2>
+                    </div>
+                </div>
                 <div className="login-box">
                     <h2>Login</h2>
                     <form>
@@ -55,11 +60,6 @@ function Login() {
                             </div>
                         </div>
                     </form>
-                </div>
-                <div className="right-form-container">
-                    <div className="right-form-container-inner">
-                        <h2>welcome</h2>
-                    </div>
                 </div>
             </div>
         </div>

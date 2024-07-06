@@ -77,7 +77,7 @@
 }
 
 .carousel::-webkit-scrollbar {
-    height: 5px;
+    height: 0px;
 }
 
 .carousel::-webkit-scrollbar-track {
