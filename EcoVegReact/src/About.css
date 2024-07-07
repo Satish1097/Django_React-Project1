@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f5f5f5;
+  }
+  
+  .headline {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 1.5rem;
+    flex-basis: 30%;
+  }
+  
+  .iconA {
+    width: 4rem;
+    height: 4rem;
+    background-color: #5BB507;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: white;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+  
+  @media (max-width: 768px) {
+    .feature {
+      flex-basis: 45%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .feature {
+      flex-basis: 100%;
+    }
+  }
+  

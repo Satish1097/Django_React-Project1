@@ -1,8 +1,11 @@
 import React from 'react'
 import './Home.css'
+import Product from './Product'
+import Category from './Category'
+import Offer from './Offer'
 export const Home = () => {
     return (
-
+<>
         <header class="hero-section">
             <div class="hero-content">
                 <h2>
@@ -35,6 +38,10 @@ export const Home = () => {
                 <img src="Images/bg.png" alt="Organic Foods" className='home-image' />
             </div>
         </header>
+        <Category/>
+        <Product/>
+        <Offer/>
+        </>
 
     )
 }

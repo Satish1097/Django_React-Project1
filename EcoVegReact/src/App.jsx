@@ -2,14 +2,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Nav from './Nav'
 import { Home } from './Home'
 import Test from './Test'
-import Product from './Product'
-import Category from './Category'
 import Services from './Services'
 import './App.css'
 import Footer from './Footer'
 import Login from './Login'
+import About from './About'
 import Signup from './Signup'
-import Offer from './Offer'
 function App() {
 
   return (
@@ -22,12 +20,10 @@ function App() {
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/Signup" element={<Signup />}></Route>
           <Route path="/Services" element={<Services />}></Route>
+          <Route path="/About" element={<About/>}></Route>
 
         </Routes>
       </Router>
-      <Category />
-      <Product />
-      <Offer />
       <Footer />
     </>
   )
