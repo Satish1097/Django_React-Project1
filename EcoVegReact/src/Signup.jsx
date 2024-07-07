@@ -1,30 +1,67 @@
-import React, { useState } from 'react';
+import { useState} from 'react';
 import { Link } from 'react-router-dom';
 import { FaUserAlt, FaLock, FaFacebook, FaEnvelope } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaSquareXTwitter, FaPhone } from "react-icons/fa6";
 import "./Sign.css";
+import axios from "axios"
+import { toast } from 'react-toastify'
 
 
 const Signup = () => {
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [mobile, setMobile] = useState("")
-    const [password, setPassword] = useState("");
+    const [Name, setName] = useState("");
+    const [Email, setEmail] = useState("");
+    const [Contact, setContact] = useState("")
+    const [Password, setPassword] = useState("");
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const mobilepattern = /^(\+91[\-\s]?)?[789]\d{9}$/;
+
+        try {
+            if (!Name || !Email || !Contact || !Password) {
+                toast.error("All Fields are Required");
+            }
+            else if (!mobilepattern.test(Contact)) {
+                toast.error("Enter Valid Number");
+            }
+            else if (Password.length < 8) {
+                toast.error("Password must be 8 digit long")
+
+
+            }
+            else {
+                const userdata = await axios.get('http://127.0.0.1:8000/customers/')
+                const data=userdata.data
+                const userExist = data.find(e=> e.Email === Email)
+                if (userExist) {
+                    toast.error("Email Already Exist")
+                }
+                else {
+                    const postdata = { Name, Email, Contact, Password }
+                    await axios.post('http://127.0.0.1:8000/customers/', postdata)
+                    toast.success("Successfully Registered")
+                }
+            }
+
+        }
+        catch (error) {
+            console.log(error)
+            toast.error("something went wrong")
+        }
+    }
     return (
         <div className="wrapper-login">
             <div className="outer-form-container">
                 <div className="login-box">
                     <h2>Signup</h2>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="input-box">
                             <input
                                 type="text"
                                 className="form-control"
-                                id="username"
-                                autoComplete="off"
                                 onChange={(e) => setName(e.target.value)}
-                                value={name}
+                                value={Name}
                             />
                             <label htmlFor="username">Name</label>
                             <FaUserAlt className='icon' />
@@ -33,10 +70,8 @@ const Signup = () => {
                             <input
                                 type="text"
                                 className="form-control"
-                                id="username"
-                                autoComplete="off"
                                 onChange={(e) => setEmail(e.target.value)}
-                                value={email}
+                                value={Email}
                             />
                             <label htmlFor="username">Email</label>
                             <FaEnvelope className='icon' />
@@ -45,10 +80,8 @@ const Signup = () => {
                             <input
                                 type="text"
                                 className="form-control"
-                                id="username"
-                                autoComplete="off"
-                                onChange={(e) => setMobile(e.target.value)}
-                                value={mobile}
+                                onChange={(e) => setContact(e.target.value)}
+                                value={Contact}
                             />
                             <label htmlFor="username">Phone</label>
                             <FaPhone className='icon' />
@@ -58,9 +91,8 @@ const Signup = () => {
                                 type="password"
                                 className="form-control"
                                 id="password"
-                                autoComplete="off"
                                 onChange={(e) => setPassword(e.target.value)}
-                                value={password}
+                                value={Password}
                             />
                             <label htmlFor="password">Password</label>
                             <FaLock className='icon' />
