@@ -1,26 +1,66 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
-function Test() {
-  const [customers, setCustomers] = useState([]);
+import Cookies from 'js-cookie';
 
-  useEffect(() => {
-    // Fetch Customers
-    axios.get('http://127.0.0.1:8000/customers/')  // Update the URL if necessary
-      .then(response => setCustomers(response.data))
-      .catch(error => console.error('Error fetching customers:', error));
-  },[]);
+const Test = () => {
+  const [Name, setName] = useState("");
+  const [Email, setEmail] = useState("");
+  const [Contact, setContact] = useState("");
+  const [Password, setPassword] = useState("");
 
-  return (
-    <div className="App">
-      <h1>Customers</h1>
-      <ul>
-        {customers.map(customer => (
-          <li key={customer.id}>{customer.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+  const handleOTP = async () => {
+    const csrftoken = Cookies.get('csrftoken');
+
+    try {
+      const otpResponse = await axios.post('http://127.0.0.1:8000/send_mail_view/', { Email }, {
+        headers: {
+          'X-CSRFToken': csrftoken,
+        },
+      });
+      if (otpResponse.data.success) {
+        toast.success("OTP sent to your email");
+      } else {
+        toast.error("Error sending OTP: " + otpResponse.data.error);
+      }
+    } catch (otpError) {
+      console.error("Error sending OTP: ", otpError);
+      toast.error("Error sending OTP");
+    }
+  };
+return (
+  <div>
+    <h2>Signup</h2>
+    <form>
+      <input
+        type="text"
+        value={Name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Name"
+      />
+      <input
+        type="text"
+        value={Email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="Email"
+      />
+      <input
+        type="text"
+        value={Contact}
+        onChange={(e) => setContact(e.target.value)}
+        placeholder="Phone"
+      />
+      <input
+        type="password"
+        value={Password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="Password"
+      />
+      <button type='button' onClick={handleOTP}>Send OTP</button>
+    </form>
+  </div>
+);
+};
 
 export default Test;
