@@ -33,7 +33,7 @@ const Test = () => {
   
   const handleVerify = async () => {
     try {
-      const otpRecordResponse = await axios.get(`http://127.0.0.1:8000/OtpRecord/?email=${Email}`);
+      const otpRecordResponse = await axios.get(`http://127.0.0.1:8000/customers/?Email=${Email}`);
       if (otpRecordResponse.data.length > 0) {
         const storedOTP = otpRecordResponse.data[0].otp;
         console.log(storedOTP)

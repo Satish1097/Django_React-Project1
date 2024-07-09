@@ -9,7 +9,6 @@ router.register(r'products',views.ProductViewSet)
 router.register(r'categories',views.CategoryViewSet)
 router.register(r'orders',views.OrderViewSet)
 router.register(r'cart',views.CartViewSet)
-router.register(r'OtpRecord',views.OTPViewSet)
 
 
 
@@ -17,5 +16,4 @@ urlpatterns = [
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('send_mail_view/',views.send_mail_view, name='send_mail_view'),
-    path('xyz/',views.xyz,name="xyz"),
 ]
