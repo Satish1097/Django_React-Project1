@@ -26,7 +26,7 @@ class CustomerViewSet(viewsets.ModelViewSet):
 def send_mail_view(request):
     Name = request.data.get('Name')
     Email = request.data.get('Email')
-    Mobile=request.data.get('Mobile')
+    Contact=request.data.get('Contact')
     Password=request.data.get('Password')
     if Email:
         try:
@@ -47,7 +47,7 @@ def send_mail_view(request):
             customer = Customer.objects.create(
                 Name=Name,
                 Email=Email,
-                Mobile=Mobile,
+                Contact=Contact,
                 Password=Password,
                 OTP=generated_otp
             )
