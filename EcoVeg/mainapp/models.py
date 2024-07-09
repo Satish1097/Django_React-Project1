@@ -41,4 +41,13 @@ class Order(models.Model):
 
     def __str__(self):
         return self.CustomerDetail.Name
+    
+
+class OTPRecord(models.Model):
+    email = models.EmailField()
+    otp = models.CharField(max_length=4)
+    created_at = models.DateTimeField(auto_now_add=True)
+    expires_at = models.DateTimeField()
+    def __str__(self):
+        return self.email
 # Create your models here.

@@ -7,7 +7,7 @@ import './App.css'
 import Footer from './Footer'
 import Login from './Login'
 import About from './About'
-import Signup from './Signup'
+// import Signup from './Signup'
 function App() {
 
   return (
@@ -18,7 +18,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/Test" element={<Test />}></Route>
           <Route path="/Login" element={<Login />}></Route>
-          <Route path="/Signup" element={<Signup />}></Route>
+          {/* <Route path="/Signup" element={<Signup />}></Route> */}
           <Route path="/Services" element={<Services />}></Route>
           <Route path="/About" element={<About/>}></Route>
 

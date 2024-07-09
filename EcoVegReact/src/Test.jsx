@@ -9,12 +9,13 @@ const Test = () => {
   const [Email, setEmail] = useState("");
   const [Contact, setContact] = useState("");
   const [Password, setPassword] = useState("");
+  const [OTP, SetOTP]=useState("");
 
   const handleOTP = async () => {
     const csrftoken = Cookies.get('csrftoken');
-
+  
     try {
-      const otpResponse = await axios.post('http://127.0.0.1:8000/send_mail_view/', { Email,Name }, {
+      const otpResponse = await axios.post('http://127.0.0.1:8000/send_mail_view/', { Email, Name }, {
         headers: {
           'X-CSRFToken': csrftoken,
         },
@@ -29,6 +30,30 @@ const Test = () => {
       toast.error("Error sending OTP");
     }
   };
+  
+  const handleVerify = async () => {
+    try {
+      const otpRecordResponse = await axios.get(`http://127.0.0.1:8000/OtpRecord/?email=${Email}`);
+      if (otpRecordResponse.data.length > 0) {
+        const storedOTP = otpRecordResponse.data[0].otp;
+        console.log(storedOTP)
+        
+        if (OTP === storedOTP) {
+          toast.success("OTP verified successfully");
+          // Proceed with user authentication or other actions
+        } else {
+          toast.error("Incorrect OTP. Please try again.");
+        }
+      } else {
+        toast.error("No OTP records found.");
+      }
+    } catch (error) {
+      console.error("Error verifying OTP: ", error);
+      toast.error("Error verifying OTP");
+    }
+  };
+  
+  
 return (
   <div>
     <h2>Signup</h2>
@@ -58,6 +83,12 @@ return (
         placeholder="Password"
       />
       <button type='button' onClick={handleOTP}>Send OTP</button>
+      <input type="text"
+      value={OTP}
+      onChange={(e)=>SetOTP(e.target.value)}
+      />
+      <button type='button' onClick={handleVerify}>Verify</button>
+      <input type="submit" />
     </form>
   </div>
 );
