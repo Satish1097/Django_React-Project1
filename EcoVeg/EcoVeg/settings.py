@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'mainapp',
     "corsheaders",
     'rest_framework',
-
 ]
 
 MIDDLEWARE = [
@@ -76,7 +75,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'EcoVeg.wsgi.application'
 SESSION_ENGIN='django.contrib.sessions.backends.db'
-SESSION_ENGIN='django.contrib.sessions.backends.cache'
 
 
 # Database
@@ -107,6 +105,11 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+ 
+SESSION_EXPIRE_SECONDS = 3600  # 1 hour
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY_GRACE_PERIOD = 60 # group by minute
+
 
 
 # Internationalization

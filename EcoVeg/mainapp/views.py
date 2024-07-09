@@ -48,20 +48,32 @@ def send_mail_view(request):
                 fail_silently=False,
             )
 
-            # Store the OTP in the database
+            #Store the OTP in the database
             otp_record = OTPRecord.objects.create(
                 email=email,
                 otp=generated_otp,
                 expires_at=timezone.now() + timedelta(minutes=5)
             )
             otp_record.save()
+            request.session['otp']=generated_otp
+            print(request.session.get('otp'))
+
             return JsonResponse({"success": True, "otp": generated_otp})
         except Exception as e:
             return JsonResponse({"success": False, "error": str(e)}, status=500)
     else:
         return JsonResponse({"success": False, "error": "Email is required"}, status=400)
+def xyz(request):
+    # Retrieve the OTP value from the session
+    otp_value = request.session.get('otp')  # Replace 'otp_key' with the actual key used to store the OTP
 
-
+    if otp_value:
+        # OTP value is found in the session
+        # You can now use the otp_value in your view logic
+        return HttpResponse(f"OTP value retrieved from session: {otp_value}")
+    else:
+        # Handle the case when OTP data is not found in the session
+        return HttpResponse("OTP value not found in session")
 
 class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
