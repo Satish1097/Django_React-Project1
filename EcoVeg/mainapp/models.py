@@ -6,6 +6,7 @@ class Customer(models.Model):
     Contact=models.CharField(max_length=10)
     Image=models.ImageField(upload_to='images/', default='https://media.istockphoto.com/id/1337144146/vector/default-avatar-profile-icon-vector.jpg?s=612x612&w=0&k=20&c=BIbFwuv7FxTWvh5S3vB6bkT0Qv8Vn8N5Ffseq84ClGI=')
     Password=models.CharField(max_length=100)
+    OTP=models.CharField(max_length=4,default="")
 
     def __str__(self):
         return self.Name
@@ -41,4 +42,5 @@ class Order(models.Model):
 
     def __str__(self):
         return self.CustomerDetail.Name
+    
 # Create your models here.

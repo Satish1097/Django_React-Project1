@@ -1,5 +1,5 @@
 import { useState} from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { FaUserAlt, FaLock, FaFacebook, FaEnvelope } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaSquareXTwitter, FaPhone } from "react-icons/fa6";
@@ -13,22 +13,24 @@ const Signup = () => {
     const [Email, setEmail] = useState("");
     const [Contact, setContact] = useState("")
     const [Password, setPassword] = useState("");
-
+    const Navigate=useNavigate()
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const mobilepattern = /^(\+91[\-\s]?)?[789]\d{9}$/;
+        const mobilePattern = /^(\+91[\-\s]?)?[789]\d{9}$/;
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         try {
             if (!Name || !Email || !Contact || !Password) {
                 toast.error("All Fields are Required");
             }
-            else if (!mobilepattern.test(Contact)) {
+            else if (!mobilePattern.test(Contact)) {
                 toast.error("Enter Valid Number");
             }
             else if (Password.length < 8) {
                 toast.error("Password must be 8 digit long")
-
-
+            }
+            else if(!emailPattern.test(Email)){
+                toast.error("Enter Valid Email")
             }
             else {
                 const userdata = await axios.get('http://127.0.0.1:8000/customers/')
@@ -39,8 +41,10 @@ const Signup = () => {
                 }
                 else {
                     const postdata = { Name, Email, Contact, Password }
-                    await axios.post('http://127.0.0.1:8000/customers/', postdata)
-                    toast.success("Successfully Registered")
+                    localStorage.setItem('Email',Email)
+                    await axios.post('http://127.0.0.1:8000/send_mail_view/', postdata)
+                    toast.success("OTP sent on your Email")
+                    Navigate('/s1t0')
                 }
             }
 
