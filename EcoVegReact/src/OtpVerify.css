@@ -1,7 +1,149 @@
-.Otp-Verify{
-    height: 30vh;
-    width: 30%;
+.wrapper-verify {
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    border-top: 1px solid gray;
+}
+
+.Otp-Verify {
+    background: #e0e0e0af;
+    padding: 30px;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.verify-outer {
+    display: grid;
+    place-items: center;
+    padding: 10px;
+}
+
+.verify-inner {
+    height: 200px;
+    width: 100%;
+    padding: 1rem;
+}
+
+
+.group {
     position: relative;
-    transform: translateY(-50%);
-    background-color: aquamarine;
+}
+
+.input1 {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    border: none;
+    border-bottom: 2px solid #515151;
+    background: transparent;
+}
+
+.input1:focus {
+    outline: none;
+}
+
+label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.input1:focus~label,
+.input1:valid~label {
+    top: -5px;
+    font-size: 14px;
+    color: #5264AE;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 200px;
+}
+
+.bar:before,
+.bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264AE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+.input:focus~.bar:before,
+.input:focus~.bar:after {
+    width: 50%;
+}
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 100px;
+    top: -10%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.input:focus~.highlight {
+    animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: #5264AE;
+    }
+
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+.verify-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.verify-btn {
+    background: #0d6efd;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    width: 30%;
+    transition: 0.3s ease all;
+}
+
+.verify-btn:hover {
+    background: #0d6efd;
+    transform: scale(1.1);
 }
