@@ -23,8 +23,6 @@ function App() {
           <Route path="/Services" element={<Services />}></Route>
           <Route path="/About" element={<About/>}></Route>
           <Route path="/s1t0" element={<OtpVerify/>}></Route>
-
-
         </Routes>
       </Router>
       <Footer />

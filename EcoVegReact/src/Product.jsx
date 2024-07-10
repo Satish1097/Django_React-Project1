@@ -35,7 +35,7 @@ function Product() {
             <p className="discount-price">{i.Discounted_Price}</p>
         </div>
         <div className="product-btn">
-            <button className="product-add-btn">Add to Cart</button>
+            <button className="product-add-btn" onClick={() => Add(i.id)}>Add to Cart</button>
             <button className="product-like-btn"><FaHeart /></button>
         </div>
     </div>

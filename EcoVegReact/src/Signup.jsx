@@ -37,7 +37,7 @@ const Signup = () => {
                 const data=userdata.data
                 const userExist = data.find(e=> e.Email === Email)
                 if (userExist) {
-                    toast.error("Email Already Exist")
+                    toast.error("Email Already Exist? Login")
                 }
                 else {
                     const postdata = { Name, Email, Contact, Password }
