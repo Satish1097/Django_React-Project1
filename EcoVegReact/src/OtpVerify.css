@@ -1,0 +1,7 @@
+.Otp-Verify{
+    height: 30vh;
+    width: 30%;
+    position: relative;
+    transform: translateY(-50%);
+    background-color: aquamarine;
+}
