@@ -33,12 +33,23 @@ function OtpVerify() {
   }
   return (
     <>
-      <div className="Otp-Verify">
-        <h1>Enter OTP sent on Email</h1>
-        <form action="" onSubmit={handleSubmit}>
-          <input type="text" value={OTP} onChange={(e) => setOTP(e.target.value)} />
-          <input type="submit" />
-        </form>
+      <div className="wrapper-verify">
+        <div className="Otp-Verify">
+          <div className="verify-outer">
+            <div className="verify-inner">
+              <form action="" onSubmit={handleSubmit} className='verify-form'>
+                <h1>Enter OTP sent on Email</h1>
+                <div class="group">
+                  <input required="" type="text" class="input1" value={OTP} onChange={(e) => setOTP(e.target.value)} />
+                  <span class="highlight"></span>
+                  <span class="bar"></span>
+                  <label>OTP</label>
+                </div>
+                <button type="submit" className='verify-btn'>Verify</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )
