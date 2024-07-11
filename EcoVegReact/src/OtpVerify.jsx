@@ -5,20 +5,23 @@ import { toast } from 'react-toastify'
 import './OtpVerify.css'
 
 function OtpVerify() {
-  const [OTP, setOTP] = useState("")
   const Navigate = useNavigate()
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const Email = localStorage.getItem('Email')
-      const otpRecordResponse = await axios.get('http://127.0.0.1:8000/customers/')
-      const response = otpRecordResponse.data
-      const data = response.find(var1 => var1.Email == Email)
-      const otp = data.OTP
+      const response = await axios.get('http://127.0.0.1:8000/verify-otp')
+      const otp = response.data.otp
       if (otp) {
         if (otp === OTP) {
-          toast.success("OTP verified successfully");
+          let user_data = localStorage.getItem('data');
+          let user = JSON.parse(user_data)
+          let Name = user.name
+          let Email = user.email
+          let Contact = user.contact
+          let Password = user.password
+          let user1 = { Name, Email, Contact, Password }
+          await axios.post('http://127.0.0.1:8000/customers/', user1)
+          toast.success("User Registered successfully");
           Navigate('/')
         } else {
           toast.error("Incorrect OTP. Please try again.");
@@ -27,7 +30,7 @@ function OtpVerify() {
         toast.error("No OTP records found.");
       }
     }
-    catch {
+    catch (err) {
       toast.error("Try Again")
     }
   }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { FaUserAlt, FaLock, FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -7,6 +7,36 @@ import './Login.css'
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const Navigate=useNavigate()
+
+    const handleLogin=async()=>{
+        e.preventDefault()
+
+        try{
+            if(username && password)
+            {
+                const user= await axios.get('http://127.0.0.1:8000/customers/')
+                userdata=user.find(user=>user.Email==username && user.Password==password)
+
+                if(userdata){
+                    Navigate('/')
+                }
+                else{
+                    toast.error("Incorrect UserName or Password")
+                }
+            }
+            else{
+                toast.error("Enter Email & Password")
+            }
+    
+        }
+        catch(error){
+            toast.error("An error occured")
+    
+        }
+    }
+    
+
     return (
         <div className="wrapper-login">
             <div className="outer-form-container">
@@ -17,7 +47,7 @@ function Login() {
                 </div>
                 <div className="login-box">
                     <h2>Login</h2>
-                    <form>
+                    <form onSubmit={handleLogin}>
                         <div className="form-group-outer">
                             <div className="input-box">
                                 <input
