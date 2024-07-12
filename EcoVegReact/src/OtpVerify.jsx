@@ -27,6 +27,7 @@ function OtpVerify() {
           let user1 = { Name, Email, Contact, Password }
           await axios.post('http://127.0.0.1:8000/customers/', user1)
           toast.success("User Registered successfully");
+          localStorage.removeItem('data');
           Navigate('/')
         } else {
           toast.error("Incorrect OTP. Please try again.");
