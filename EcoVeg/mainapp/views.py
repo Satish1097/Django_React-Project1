@@ -12,9 +12,6 @@ from django.core.mail import send_mail
 from django.http import JsonResponse
 import random
 
-
-
-
 class CustomerViewSet(viewsets.ModelViewSet):
     queryset=Customer.objects.all()
     serializer_class=CustomerSerializer

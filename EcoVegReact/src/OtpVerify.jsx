@@ -5,6 +5,7 @@ import { toast } from 'react-toastify'
 import './OtpVerify.css'
 
 function OtpVerify() {
+  const [OTP,setOTP]=useState()
   const Navigate = useNavigate()
   const handleSubmit = async (e) => {
     e.preventDefault()
