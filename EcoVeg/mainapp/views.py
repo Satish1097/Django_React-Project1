@@ -33,19 +33,19 @@ def send_mail_view(request):
             a = generated_otp
             subject = "Verify Your Account - OTP Verification"
             message = f"""
-            Dear {Name},
+Dear {Name},
 
-            Thank you for registering with us. To complete the verification of your account, please use the following One-Time Password (OTP):
+Thank you for registering with us. To complete the verification of your account, please use the following One-Time Password (OTP):
                 
-            Your OTP is: {generated_otp}
+Your OTP is: {generated_otp}
                 
-            Please enter this OTP on the verification page to confirm your account. This OTP is valid for the next 2 minutes.
-            If you did not request this OTP or have any concerns, please contact our support team immediately.
-                
-            Thank you for choosing our service!
+Please enter this OTP on the verification page to confirm your account. This OTP is valid for the next 2 minutes.
+If you did not request this OTP or have any concerns, please contact our support team immediately.
+    
+Thank you for choosing our service!
 
-            Best Regards,
-            EcoVeg Support Team
+Best Regards,
+EcoVeg Support Team
             """
             email_from = 'smartxcodeotp@gmail.com'
             recipient_list = [Email]

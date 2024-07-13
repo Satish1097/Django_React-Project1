@@ -11,7 +11,7 @@ const override = {
 };
 
 const Loading = ({ show }) => {
-    let [color, setColor] = useState("green");
+    let [color, setColor] = useState("#000");
     return show && (
         <div className='loading-wrapper'>
             <div className="loading">
