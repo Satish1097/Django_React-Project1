@@ -2,131 +2,130 @@
     width: 100%;
     height: 100%;
     padding: 100px;
-    background: #fff;
+    background: #e0e0e0af;
     display: grid;
     place-items: center;
     border-top: 1px solid gray;
 }
 
 .Otp-Verify {
-    background: #e0e0e0af;
-    padding: 30px;
+    background: #fff;
+    padding: 20px;
     border-radius: 0.5rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-.verify-outer {
-    display: grid;
-    place-items: center;
-    padding: 10px;
+.Otp-Verify .outer-form {
+    height: 300px;
+    width: 400px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-.verify-inner {
-    height: 200px;
-    width: 100%;
-    padding: 1rem;
+.outer-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
 }
 
+.email-message {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.otp-message {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #999;
+}
+
+.email-detail {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #999;
+}
+
+.email-detail .email {
+    color: green;
+}
 
 .group {
     position: relative;
 }
 
-.input1 {
-    font-size: 16px;
-    padding: 10px 10px 10px 5px;
-    display: block;
-    width: 200px;
-    border: none;
-    border-bottom: 2px solid #515151;
-    background: transparent;
-}
-
-.input1:focus {
-    outline: none;
-}
-
-label {
-    color: #999;
-    font-size: 18px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: 5px;
-    top: 10px;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-}
-
-.input1:focus~label,
-.input1:valid~label {
-    top: -5px;
-    font-size: 14px;
-    color: #5264AE;
-}
-
-.bar {
+.form__group {
     position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    max-width: 180px;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 17px;
+    color: #000;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
     display: block;
-    width: 200px;
-}
-
-.bar:before,
-.bar:after {
-    content: '';
-    height: 2px;
-    width: 0;
-    bottom: 1px;
-    position: absolute;
-    background: #5264AE;
-    transition: 0.2s ease all;
-    -moz-transition: 0.2s ease all;
-    -webkit-transition: 0.2s ease all;
-}
-
-.bar:before {
-    left: 50%;
-}
-
-.bar:after {
-    right: 50%;
-}
-
-.input:focus~.bar:before,
-.input:focus~.bar:after {
-    width: 50%;
-}
-
-.highlight {
-    position: absolute;
-    height: 60%;
-    width: 100px;
-    top: -10%;
-    left: 0;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #9b9b9b;
     pointer-events: none;
-    opacity: 0.5;
 }
 
-.input:focus~.highlight {
-    animation: inputHighlighter 0.3s ease;
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #38caef);
+    border-image-slice: 1;
 }
 
-@keyframes inputHighlighter {
-    from {
-        background: #5264AE;
-    }
+.form__field:focus~.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #38caef;
+    font-weight: 700;
+}
 
-    to {
-        width: 0;
-        background: transparent;
-    }
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+    box-shadow: none;
 }
 
 .verify-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
     align-items: center;
 }
 
@@ -146,4 +145,23 @@ label {
 .verify-btn:hover {
     background: #0d6efd;
     transform: scale(1.1);
+}
+.resend-outer{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+.resend-message{
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: #999;
+}
+.resend-otp{
+    color: green;
+    cursor: pointer;
+    font-weight: bold;
+}
+.resend-otp:hover{
+    text-decoration: underline;
 }

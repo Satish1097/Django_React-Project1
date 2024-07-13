@@ -38,10 +38,11 @@
     height: 45px;
     width: 30%;
     display: flex;
+    position: relative;
     background-color: white;
-    transform: translateY(35%);
     border: 2px solid green;
     border-radius: 10px;
+    top: 23%;
 }
 
 .nav .search .category {

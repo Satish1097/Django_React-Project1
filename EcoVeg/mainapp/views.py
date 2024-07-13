@@ -19,7 +19,7 @@ class CustomerViewSet(viewsets.ModelViewSet):
 
 a=0
 @csrf_exempt
-@api_view(['POST'])
+@api_view(['POST','GET'])
 def send_mail_view(request):
     Name = request.data.get('Name')
     Email = request.data.get('Email')
