@@ -6,17 +6,21 @@ import { PiUserSwitchLight } from "react-icons/pi";
 import { BsCart4 } from "react-icons/bs";
 
 import './Nav.css'
+import { getCategory } from './Manage';
 
 function Nav() {
   const[Category,SetCategory]=useState([]);
   useEffect(()=>{
-    axios.get('http://127.0.0.1:8000/categories/')
-    .then(response => {
-      SetCategory(response.data);
+    let mounted=true;
+    getCategory()
+    .then(data => {
+      if(mounted) {
+        SetCategory(data);
+      }
     })
-    .catch(error => {
-      console.error('There was an error fetching the data!', error);
-    });
+  return () => {
+     mounted = false;
+  }
   },[])
 
   const OpenMenu = () => {
