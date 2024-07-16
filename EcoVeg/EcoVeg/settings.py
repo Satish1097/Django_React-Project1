@@ -136,7 +136,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",
+    "http://localhost:5173"
 ]
 
 CORS_ALLOW_METHODS = (
@@ -176,11 +176,18 @@ LOGGING = {
             'class': 'logging.StreamHandler',
         },
     },
-    'root': {
-        'handlers': ['console'],
-        'level': 'INFO',
+    'loggers': {
+        'django.security.csrf': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+        'corsheaders': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
     },
 }
+
 
 
 REST_FRAMEWORK = {
